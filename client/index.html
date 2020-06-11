@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Twitter</title>
+    <title>Dedicate</title>
 
     <!-- css stuff -->
     <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
@@ -13,16 +13,25 @@
   </head>
   <body>
     <div class='wrapper'>
+
       <div id='first'>
         <h1 id="hello">Hello!</h1>
         <button id = 'startbutton'>Let's get started.</button>
         <button id = 'loginbutton'>I've got an account.</button>
       </div>
-      <form id='login-form'>
-        <h2>Welcome to Dedicate</h2>
+
+      <form id='sign-up-form'>
+        <h2>Welcome to Dedicate!</h2>
         <input type='text' name='email' placeholder="email">
         <input type="password" name="password" placeholder="password">
+        <input type="password" name="confirm-password" placeholder="confirm password">
         <input type="submit" class='button-primary' value='Signup.'></button>
+      </form>
+
+      <form id='login-form'>
+        <h2>Welcome Back!</h1>
+        <input type="text" name='email' placeholder="email">
+        <input type="text" name="password" placeholder="password">
       </form>
     </div>
   </body>

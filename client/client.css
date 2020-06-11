@@ -32,8 +32,8 @@ button {
   text-align: center;
 }
 
-#login-form {
-  display: none;
+#sign-up-form, #login-form {
+  display:none;
   margin-top:-20px;
 }
 
