@@ -1,7 +1,6 @@
 
 var startbutton = $("#startbutton");
 var loginbutton = $("#loginbutton");
-console.log(backarrow)
 
 const signup = document.getElementById("sign-up-form");
 const API_URL = 'http://localhost:5000/signup';
@@ -22,6 +21,11 @@ $("#intro-arrow").click(function() {
   setTimeout(present_intro_two, 1000);
 })
 
+$("#intro2-arrow").click(function() {
+  $("#intro2").fadeOut("swing");
+  setTimeout(present_signup, 1000);
+})
+
 function present_login(){
   $("#login-form").fadeIn("swing");
 }
@@ -39,7 +43,7 @@ function present_intro(){
 }
 
 function present_intro_two() {
-  $("intro2").fadeIn("swing");
+  $("#intro2").fadeIn("swing");
 }
 
 $("#backarrow1").click(function(){

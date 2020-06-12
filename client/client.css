@@ -29,7 +29,7 @@ button {
   text-align: center;
 }
 
-#sign-up-form, #login-form, #intro {
+#sign-up-form, #login-form, #intro, #intro2 {
   display:none;
   margin-top:-30px;
 }
