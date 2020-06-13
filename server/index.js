@@ -7,8 +7,8 @@ var sqlite = require("sqlite3").verbose();
 
 // ------ Create App Constants and Initialize Some Stuff ----- //
 const app = express();
+app.use(cors({origin: 'http://127.0.0.1:8080/'}));
 app.use(cookieParser());
-app.use(cors());
 app.use(express.json());
 var db = new sqlite.Database("main.db");
 
@@ -39,12 +39,12 @@ app.get('/', (req, res) => {
   })
 });
 
-app.get('/signup', (req, res) => {
+app.post('/signup', (req, res) => {
 
-  console.log(req.headers.cookie);
+  console.log(req.headers);
 
   res.json({
-
+    'cookies': req.headers.cookie
   })
   /*// Check credentials
   if (signupValid(req.body)) {

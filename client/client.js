@@ -74,6 +74,8 @@ signup.addEventListener('submit', (event) => {
       fetch(API_URL, {
         method: "POST",
         body: JSON.stringify(info),
+        mode: 'no-cors',
+        credentials: 'same-origin',
         headers: {
           'content-type':'application/json'
         }
