@@ -5,6 +5,8 @@ var loginbutton = $("#loginbutton");
 const signup = document.getElementById("sign-up-form");
 const API_URL = 'http://localhost:5000/signup';
 
+document.cookie = 'name=paul';
+
 // ----- Animations
 startbutton.click(function() {
   $("#first").fadeOut("swing");

@@ -1,16 +1,19 @@
 // ----- Bring in required packages ------ //
 const express = require("express");
+const cookieParser = require("cookie-parser");
 const cors = require("cors");
 var sqlite = require("sqlite3").verbose();
 
+
 // ------ Create App Constants and Initialize Some Stuff ----- //
 const app = express();
+app.use(cookieParser());
 app.use(cors());
 app.use(express.json());
 var db = new sqlite.Database("main.db");
 
 
-// --------- Custom JS Functions ----------- //
+// ----------------------- Custom JS Functions ----------------------- //
 function signupValid(info){
 
   // Check for null cases
@@ -23,61 +26,51 @@ function signupValid(info){
   if (result != undefined){
     return false;
     console.log('repeat')
-  } else {
-    console.log(result)
-    console.log('oaosd')
   }
 
   return true;
 }
 
 
-// -------- App Routes -------- //
+// ----------------------- App Routes ---------------------- //
 app.get('/', (req, res) => {
-
-  db.all("SELECT * FROM users", (err, rows) => {
-
-    if (err){
-      res.json({
-        message: err.message
-      });
-    }
-
-    res.json({
-      message: rows[0].email
-    });
-
-  });
-
-
+  res.json({
+    'cookies': req.headers.cookie
+  })
 });
 
-app.post('/signup', (req, res) => {
-  if (signupValid(req.body)) {
+app.get('/signup', (req, res) => {
 
-    // Insert into DB if valid
+  console.log(req.headers.cookie);
+
+  res.json({
+
+  })
+  /*// Check credentials
+  if (signupValid(req.body)) {
     const info = {
       username: req.body.email.toString(),
       pass: req.body.pass.toString()
     };
 
+    // Insert into DB
     db.all('INSERT INTO users(email, password) VALUES ("' + info.username + '", "' + info.pass + '");', (err, rows) => {
 
+      // Handle Error in SQL
       if (err){
         res.json({
           message: err.message
         });
-
         console.log(err.message)
       }
 
-      res.json({
-        message: "Success!"
-      });
-      console.log("Success!")
+      // Set cookies on succesful sign up
 
+      //res.cookie('email', info.username, {maxAge: 1000 * 60 * 60 * 24}).send();
     });
 
+
+  // Handle bad/duplicate credentials
   } else {
     res.status(422);
     res.json({
@@ -85,8 +78,11 @@ app.post('/signup', (req, res) => {
     });
     console.log("422")
   }
+  */
 });
 
+
+// Listen
 app.listen(5000, () => {
   console.log("Listening on https://localhost:5000");
 })
