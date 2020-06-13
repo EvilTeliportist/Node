@@ -5,15 +5,16 @@ html {
 .nav {
   width: 100%;
   height: 60px;
-  background-color: #baf8ff;
   display: flex;
   margin: 0;
   position: fixed;
-  border-bottom: 2px solid #ade7ed;
+  color: white;
+  background-color: #689499;
+  box-shadow: rgba(0,0,0,.11) 0 1px;
 }
 
 #logo {
-  background-color: purple;
+  background-color: #f3f3f3;
   height: 50px;
   width: 50px;
   margin: 5px;
@@ -22,6 +23,24 @@ html {
 #logo_name {
   font-size: 42px;
   line-height: 60px;
+  width: 200px;
+}
+
+#colors {
+  position: absolute;
+  font-size: 24px;
+  height: 50px;
+  margin: 5px;
+  width: 50px;
+  text-align: center;
+  line-height: 50px;
+  right: 45px;
+  cursor: pointer;
+  user-select: none;
+}
+
+#colors:hover {
+  filter: brightness(90%);
 }
 
 #nav_profile_button {
@@ -33,7 +52,7 @@ html {
   right: 7.5px;
   margin: 7.5px;
   border-radius: 10 px;
-  border: 5px solid #f2f2f2;
+  border: 5px solid #d9d9d9;
 }
 
 #nav_profile_button:hover {
