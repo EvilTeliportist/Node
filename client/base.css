@@ -8,8 +8,8 @@ html {
   background-color: #baf8ff;
   display: flex;
   margin: 0;
-  border-bottom: 2px solid white;
   position: fixed;
+  border-bottom: 2px solid #ade7ed;
 }
 
 #logo {
@@ -32,12 +32,12 @@ html {
   width: 45px;
   right: 7.5px;
   margin: 7.5px;
-  border-radius: 22.5px;
+  border-radius: 10 px;
+  border: 5px solid #f2f2f2;
 }
 
 #nav_profile_button:hover {
   filter: brightness(90%);
-  border: 5px solid #baf8ff;
   transition: .3s;
 }
 
@@ -54,4 +54,10 @@ html {
   transition: .3s;
   margin:auto;
   line-height: 38px;
+}
+
+.rel-wrapper {
+  height: 100%;
+  width:100%;
+  position: relative;
 }
