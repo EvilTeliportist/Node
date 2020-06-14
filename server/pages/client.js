@@ -3,9 +3,9 @@ var startbutton = $("#startbutton");
 var loginbutton = $("#loginbutton");
 
 const signup = document.getElementById("sign-up-form");
-const API_URL = 'http://localhost:5000/signup';
-
-document.cookie = 'name=paul';
+const login = document.getElementById("login-form");
+const SIGNUP_URL = 'http://localhost:5000/signup';
+const LOGIN_URL = 'http://localhost:5000/login';
 
 // ----- Animations
 startbutton.click(function() {
@@ -71,16 +71,46 @@ signup.addEventListener('submit', (event) => {
       email, pass
     }
 
-      fetch(API_URL, {
+      fetch(SIGNUP_URL, {
         method: "POST",
         body: JSON.stringify(info),
-        mode: 'no-cors',
-        credentials: 'same-origin',
         headers: {
           'content-type':'application/json'
         }
-      });
+      }).then(res => {
+        if (res.redirected){
+          document.cookie = 'email='+info.email;
+          document.cookie = 'password='+info.pass;
+          window.location.href = res.url;
+        }
+      })
+
     } else {
       // handle passwords that dont match
     }
 });
+
+
+login.addEventListener('submit', (event) => {
+  event.preventDefault();
+  const formData = new FormData(login);
+  const email = formData.get('email');
+  const password = formData.get('password');
+  const info = {
+    email, password
+  }
+
+  fetch(LOGIN_URL, {
+    method: 'post',
+    body: JSON.stringify(info),
+    headers: {
+      'content-type':'application/json'
+    }
+  }).then(res => {
+    if (res.redirected){
+      document.cookie = 'email='+info.email;
+      document.cookie = 'password='+info.password;
+      window.location.href = res.url;
+    }
+  })
+})

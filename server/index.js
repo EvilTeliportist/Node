@@ -2,11 +2,13 @@
 const express = require("express");
 const cors = require("cors");
 var sqlite = require("sqlite3").verbose();
+const cookieparser = require('cookie-parser');
 
 
 // ------ Create App Constants and Initialize Some Stuff ----- //
 const app = express();
 app.use(cors());
+app.use(cookieparser());
 app.use(express.json());
 app.use(express.static(__dirname + '/pages'));
 
@@ -18,11 +20,27 @@ function signupValid(info){
   return info.email.toString().trim() !== '' && info.pass.toString().trim !== '';
 }
 
+function checkUser(email, password, res){
+  db.get("SELECT id FROM users WHERE email='"+email.toString()+"' AND password='"+password.toString()+"';", (err, rows) => {
+    if (err) {
+      console.log(err.message);
+    }
+
+    if (rows != undefined){
+      res.sendFile(__dirname+'/pages/dash.html')
+    } else {
+      res.sendFile(__dirname+'/pages/intro.html')
+    }
+  })
+}
 
 // ----------------------- App Routes ---------------------- //
 app.get('/', (req, res) => {
-    // ACCESS COOKIES IN THE REQUEST AND AUTO SIGN IN
-  res.sendFile(__dirname+'/pages/intro.html')
+  // ACCESS COOKIES IN THE REQUEST AND AUTO SIGN IN
+  // Return intro if cookies incorrect
+  email = req.cookies.email || '';
+  password = req.cookies.password || '';
+  checkUser(email, password, res);
 });
 
 app.post('/signup', (req, res) => {
@@ -46,7 +64,7 @@ app.post('/signup', (req, res) => {
         } else {
 
         // Redirect on successful signup
-        res.redirect('/dash')
+        res.redirect('/')
 
         }
     });
@@ -62,10 +80,13 @@ app.post('/signup', (req, res) => {
   }
 });
 
-app.get('/dash', (req, res) => {
-    console.log('dash')
-    res.set('content-type', 'text/html');
-    res.sendFile(__dirname+'/pages/dash.html');
+
+app.post('/login', (req, res) => {
+  const info = {
+    email: req.body.email.toString(),
+    password: req.body.password.toString()
+  }
+  checkUser(info.email, info.password, res);
 })
 
 // Listen

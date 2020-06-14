@@ -26,6 +26,12 @@ html {
   width: 200px;
 }
 
+.nav_link {
+  font-size: 30px;
+  line-height: 60px;
+  margin-right: 20px;
+}
+
 #colors {
   position: absolute;
   font-size: 24px;
