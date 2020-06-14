@@ -7,6 +7,12 @@ h1 {
   animation-duration: 3s;
 }
 
+.arrow {
+    cursor: pointer;
+    margin: auto;
+    width: 40px;
+}
+
 @keyframes fade {
   from {opacity: 0;}
   to {opacity: 1;}
@@ -23,10 +29,14 @@ button {
   transition: .3s;
 }
 
-
 .wrapper {
-  margin-top:200px;
+  position: absolute;
   text-align: center;
+  top:50%;
+  left:50%;
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
 }
 
 #sign-up-form, #login-form, #intro, #intro2 {

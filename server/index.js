@@ -1,52 +1,33 @@
 // ----- Bring in required packages ------ //
 const express = require("express");
-const cookieParser = require("cookie-parser");
 const cors = require("cors");
 var sqlite = require("sqlite3").verbose();
 
 
 // ------ Create App Constants and Initialize Some Stuff ----- //
 const app = express();
-app.use(cors({origin: 'http://127.0.0.1:8080/'}));
-app.use(cookieParser());
+app.use(cors());
 app.use(express.json());
+app.use(express.static(__dirname + '/pages'));
+
 var db = new sqlite.Database("main.db");
 
 
 // ----------------------- Custom JS Functions ----------------------- //
 function signupValid(info){
-
-  // Check for null cases
-  if (info.email.toString().trim() === '' || info.pass.toString().trim === ''){
-    return false;
-  }
-
-  // Check if email already exists
-  var result = db.get("SELECT id FROM users WHERE email = '" + info.email + "';").rows
-  if (result != undefined){
-    return false;
-    console.log('repeat')
-  }
-
-  return true;
+  return info.email.toString().trim() !== '' && info.pass.toString().trim !== '';
 }
 
 
 // ----------------------- App Routes ---------------------- //
 app.get('/', (req, res) => {
-  res.json({
-    'cookies': req.headers.cookie
-  })
+    // ACCESS COOKIES IN THE REQUEST AND AUTO SIGN IN
+  res.sendFile(__dirname+'/pages/intro.html')
 });
 
 app.post('/signup', (req, res) => {
 
-  console.log(req.headers);
-
-  res.json({
-    'cookies': req.headers.cookie
-  })
-  /*// Check credentials
+  // Check credentials
   if (signupValid(req.body)) {
     const info = {
       username: req.body.email.toString(),
@@ -62,11 +43,12 @@ app.post('/signup', (req, res) => {
           message: err.message
         });
         console.log(err.message)
-      }
+        } else {
 
-      // Set cookies on succesful sign up
+        // Redirect on successful signup
+        res.redirect('/dash')
 
-      //res.cookie('email', info.username, {maxAge: 1000 * 60 * 60 * 24}).send();
+        }
     });
 
 
@@ -78,9 +60,13 @@ app.post('/signup', (req, res) => {
     });
     console.log("422")
   }
-  */
 });
 
+app.get('/dash', (req, res) => {
+    console.log('dash')
+    res.set('content-type', 'text/html');
+    res.sendFile(__dirname+'/pages/dash.html');
+})
 
 // Listen
 app.listen(5000, () => {
