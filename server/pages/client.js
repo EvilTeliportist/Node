@@ -71,16 +71,15 @@ signup.addEventListener('submit', (event) => {
       email, pass
     }
 
-    fetch(API_URL, {
-     method: "POST",
-     body: JSON.stringify(info),
-     headers: {
-       'content-type':'application/json'
+      fetch(API_URL, {
+        method: "POST",
+        body: JSON.stringify(info),
+        mode: 'no-cors',
+        credentials: 'same-origin',
+        headers: {
+          'content-type':'application/json'
         }
-    });
-
-      document.cookie = 'email='+info.email;
-      document.cookie = 'password='+info.pass;
+      });
     } else {
       // handle passwords that dont match
     }
