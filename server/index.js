@@ -27,9 +27,9 @@ function checkUser(email, password, res){
     }
 
     if (rows != undefined){
-      res.sendFile(__dirname+'/pages/dash.html')
+      res.sendFile(__dirname+'/pages/dash/dash.html')
     } else {
-      res.sendFile(__dirname+'/pages/intro.html')
+      res.sendFile(__dirname+'/pages/intro/intro.html')
     }
   })
 }
@@ -65,7 +65,6 @@ app.post('/signup', (req, res) => {
 
         // Redirect on successful signup
         res.redirect('/')
-
         }
     });
 
@@ -86,7 +85,13 @@ app.post('/login', (req, res) => {
     email: req.body.email.toString(),
     password: req.body.password.toString()
   }
-  checkUser(info.email, info.password, res);
+
+  res.redirect('/');
+})
+
+
+app.get('/new_goal', (req, res) =>  {
+  res.sendFile(__dirname+'/pages/new_goal/new_goal.html')
 })
 
 // Listen

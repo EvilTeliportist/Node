@@ -8,8 +8,8 @@
     <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.1.1/normalize.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
-    <link rel="stylesheet" href="/base.css" type="text/css">
-    <link rel="stylesheet" href="/dash.css" type="text/css">
+    <link rel="stylesheet" href="base.css" type="text/css">
+    <link rel="stylesheet" href="/dash/dash.css" type="text/css">
 
   </head>
   <body>
@@ -30,29 +30,39 @@
       <div class='sidebar'>
         <div id='goals-tag'>
           <p style='display:inline;'>Goals</p>
-          <p id='newgoal'>New</p>
+          <a id='newgoal' href='/new_goal'>+</a>
         </div>
         <div class='goals-container'></div>
       </div>
 
         <!-- DASH -->
       <div class='dash-content'>
-        <div class='rel-wrapper'>
+
+        <!-- NORMAL DASH CONTENT -->
+        <div class='rel-wrapper' id='dash-rel-wrapper'>
           <div class='dash-content-top'>
-            <div class='top-cont'>Number of landmarks reached.</div>
-            <div class='top-cont'>Number of ongoing goals.</div>
-            <div class='top-cont'>Total time working on goals.</div>
+            <div class='top-cont'><h1 class='impact-text'>419</h1>Total landmarks completed.</div>
+            <div class='top-cont'><h1 class='impact-text'>7</h1>Ongoing goals.</div>
+            <div class='top-cont'><h1 class='impact-text'>134</h1>Total hours working on goals.</div>
           </div>
           <div class='dash-content-bottom'>
-            <div class='bottom-cont'>Graph of total milestones over time.</div>
+            <div class='bottom-cont'>TODO: Graph of total milestones over time.</div>
           </div>
         </div>
+
+      </div>
+
+      <!-- NEW GOAL -->
+      <div class='dash-content' id='goal-content'>
+
+      </div>
+
       </div>
     </div>
   </body>
 
   <!-- scripts -->
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
-  <script src = "dash.js"></script>
+  <script src = "/dash/dash.js"></script>
 
 </html>

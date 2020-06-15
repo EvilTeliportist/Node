@@ -58,14 +58,20 @@ $("#backarrow2").click(function(){
   setTimeout(present_first, 1000);
 });
 
+
+
 // Form Submitting to Post Routes
 signup.addEventListener('submit', (event) => {
   event.preventDefault();
+
+  // Get and format form data
   const formData = new FormData(signup);
   const email = formData.get('email')
   const pass = formData.get('password')
   const confirm = formData.get('confirm-password')
 
+
+  // Check that passwords match
   if (pass == confirm){
     const info = {
       email, pass
@@ -101,13 +107,14 @@ login.addEventListener('submit', (event) => {
   }
 
   fetch(LOGIN_URL, {
-    method: 'post',
+    method: 'POST',
     body: JSON.stringify(info),
     headers: {
       'content-type':'application/json'
     }
   }).then(res => {
     if (res.redirected){
+      console.log('hhh')
       document.cookie = 'email='+info.email;
       document.cookie = 'password='+info.password;
       window.location.href = res.url;

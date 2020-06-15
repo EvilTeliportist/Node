@@ -1,0 +1,30 @@
+.page-wrapper {
+  background-color: #baf8ff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+#button-wrapper {
+  width: 700px;
+  margin: 0 auto;
+  height: 80%;
+}
+
+.template-wrapper {
+  display: inline-block;
+  height: 100%;
+  width: 45%;
+  background-color: white;
+  border-radius: 25px;
+}
+
+.header {
+  font-size: 40px;
+  padding: 7px;
+  border-radius: 25px 25px 0 0;
+  border-bottom: 5px solid #baf8ff;
+  background-color: #689499;
+  color: white;
+}

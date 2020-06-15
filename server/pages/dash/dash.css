@@ -1,11 +1,3 @@
-.page-wrapper {
-  width:100%;
-  height:100%;
-  height: calc(100vh - 60px);
-  padding-top:60px;
-  display: flex;
-}
-
 .sidebar {
   height: 100%;
   width: 250px;
@@ -26,13 +18,14 @@
 #newgoal {
   display: inline;
   background-color: white;
-  width: 75px;
+  width: 40px;
   text-align: center;
   border-radius: 25px;
   float: right;
   color: #777777;
   cursor: pointer;
   transition: .3s;
+  text-decoration: none;
 }
 
 #newgoal:hover {
@@ -78,6 +71,7 @@
   width: 30%;
   top:0px;
   left:0px;
+  font-size: 24px;
 }
 
 .top-cont:hover {
@@ -89,6 +83,9 @@
 
 .bottom-cont {
   width: 100%;
+  top:0px;
+  left:0px;
+  transition: .3s;
 }
 
 .bottom-cont:hover {
@@ -96,4 +93,19 @@
   top: 2px;
   left: -2px;
   transition: .3s;
+}
+
+.impact-text {
+  width: 150px;
+  margin: 0 auto;
+  font-size: 72px;
+  border-bottom: 2px solid #aed9e0;
+  margin-top:-10px;
+}
+
+#goal-content {
+  position: absolute;
+  background-color: red;
+  height: calc(100% - 60px);
+  width: calc(100% - 210px);
 }
