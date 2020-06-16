@@ -30,15 +30,13 @@
       <div class='sidebar'>
         <div id='goals-tag'>
           <p style='display:inline;'>Goals</p>
-          <a id='newgoal' href='/new_goal'>+</a>
+          <p id='newgoalbutton'>+</p>
         </div>
         <div class='goals-container'></div>
       </div>
 
         <!-- DASH -->
       <div class='dash-content'>
-
-        <!-- NORMAL DASH CONTENT -->
         <div class='rel-wrapper' id='dash-rel-wrapper'>
           <div class='dash-content-top'>
             <div class='top-cont'><h1 class='impact-text'>419</h1>Total landmarks completed.</div>
@@ -49,16 +47,25 @@
             <div class='bottom-cont'>TODO: Graph of total milestones over time.</div>
           </div>
         </div>
-
       </div>
 
-      <!-- NEW GOAL -->
-      <div class='dash-content' id='goal-content'>
 
-      </div>
-
-      </div>
     </div>
+
+    <!-- NEW GOALS TAB -->
+    <div id='new-goal'>
+        <div id='new-goal-wrapper'>
+            <div id='goal-form'>
+                <input type='text' placeholder='Goal Name'>
+                <input type='text' placeholder="Catagory">
+                <textarea placeholder="Description"></textarea>
+            </div>
+            <div id='minimize'>
+                <div id='minimize-button'><</div>
+            </div>
+        </div>
+    </div>
+
   </body>
 
   <!-- scripts -->
