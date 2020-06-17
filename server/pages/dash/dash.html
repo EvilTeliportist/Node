@@ -32,16 +32,18 @@
           <p style='display:inline;'>Goals</p>
           <p id='newgoalbutton'>+</p>
         </div>
-        <div class='goals-container'></div>
+        <div class='goals-container'>
+          <!-- POPULATE THIS AREA WITH GOALS -->
+        </div>
       </div>
 
         <!-- DASH -->
       <div class='dash-content'>
         <div class='rel-wrapper' id='dash-rel-wrapper'>
           <div class='dash-content-top'>
-            <div class='top-cont'><h1 class='impact-text'>419</h1>Total landmarks completed.</div>
-            <div class='top-cont'><h1 class='impact-text'>7</h1>Ongoing goals.</div>
-            <div class='top-cont'><h1 class='impact-text'>134</h1>Total hours working on goals.</div>
+            <div class='top-cont'><h1 class='impact-text' id='totalLandmarks'>...</h1>Total landmarks completed.</div>
+            <div class='top-cont'><h1 class='impact-text' id='ongoinggoals'>...</h1>Ongoing goals.</div>
+            <div class='top-cont'><h1 class='impact-text' id='hours'>...</h1>Total hours working on goals.</div>
           </div>
           <div class='dash-content-bottom'>
             <div class='bottom-cont'>TODO: Graph of total milestones over time.</div>
@@ -50,20 +52,6 @@
       </div>
 
 
-    </div>
-
-    <!-- NEW GOALS TAB -->
-    <div id='new-goal'>
-        <div id='new-goal-wrapper'>
-            <div id='goal-form'>
-                <input type='text' placeholder='Goal Name'>
-                <input type='text' placeholder="Catagory">
-                <textarea placeholder="Description"></textarea>
-            </div>
-            <div id='minimize'>
-                <div id='minimize-button'><</div>
-            </div>
-        </div>
     </div>
 
   </body>

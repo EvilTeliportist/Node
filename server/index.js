@@ -27,11 +27,45 @@ function checkUser(email, password, res){
     }
 
     if (rows != undefined){
+      // GET GOALS INFO AND SEND IT BACK WITH THE FILE IN RES.JSON
       res.sendFile(__dirname+'/pages/dash/dash.html')
     } else {
       res.sendFile(__dirname+'/pages/intro/intro.html')
     }
   })
+}
+
+function getUserInfo(email, password, res){
+  if(email.toString() == '' || password.toString() == ''){
+
+    res.json({info:''});
+
+  } else {
+    db.get("SELECT * FROM users WHERE email='" + email.toString() +
+           "' AND password='" + password.toString() + "';", (err, rows) => {
+
+      // handle errors
+      if(err || rows == undefined){
+        console.log(err);
+        res.send({
+          userInfo:{
+            totalHours:'error',
+            totalLandmarks:'error',
+            goals: []
+          }
+        })
+      }
+
+      // return res.json with user info
+      res.send({
+        userInfo:{
+          totalHours:(rows.totalMinutes/60).toFixed(2),
+          totalLandmarks:rows.totalLandmarks,
+          goals: []
+        }
+      });
+    });
+  }
 }
 
 // ----------------------- App Routes ---------------------- //
@@ -79,7 +113,6 @@ app.post('/signup', (req, res) => {
   }
 });
 
-
 app.post('/login', (req, res) => {
   const info = {
     email: req.body.email.toString(),
@@ -89,9 +122,10 @@ app.post('/login', (req, res) => {
   res.redirect('/');
 })
 
-
-app.get('/new_goal', (req, res) =>  {
-  res.sendFile(__dirname+'/pages/new_goal/new_goal.html')
+app.get('/info', (req, res) => {
+  email = req.cookies.email || '';
+  password = req.cookies.password || '';
+  getUserInfo(email, password, res);
 })
 
 // Listen

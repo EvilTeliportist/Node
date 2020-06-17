@@ -44,21 +44,23 @@
 
 .dash-content-top, .dash-content-bottom {
   width: 100%;
-  height: 45%;
+  height: 48%;
   display:flex;
   justify-content: space-between;
 }
 
 .dash-content-bottom {
   position: absolute;
-  bottom: 10px;
+  bottom: 0px;
 }
 
 .top-cont, .bottom-cont {
   font-size: 18px;
   display: flex;
+  box-sizing: border-box;
   position: relative;
   height: 100%;
+  padding: 10px;
   background-color: #b8f2e6;
   border: 3px solid #aed9e0;
   border-radius: 10px;
@@ -69,7 +71,7 @@
 }
 
 .top-cont {
-  width: 30%;
+  width: 32%;
   top:0px;
   left:0px;
   font-size: 24px;
@@ -97,58 +99,23 @@
 }
 
 .impact-text {
-  width: 150px;
+  width: 200px;
   margin: 0 auto;
   font-size: 72px;
   border-bottom: 2px solid #aed9e0;
   margin-top:-10px;
 }
 
-#new-goal {
-    display: flex;
-    box-sizing: border-box;
-    position: absolute;
-    height:calc(100% - 60px);
-    width:calc(100% - 202px);
-    top:60px;
-    left:-80%;
-    background-color: #aeecf2;
-    transition: 1s;
-    border-right: 5px solid grey;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
+.goal-title {
+  color: #555555;
+  padding: 5px;
+  padding-left: 10px;
+  font-size: 24px;
+  border-bottom: 1px solid rgba(0,0,0,.08);
+  cursor: pointer;
 }
 
-#new-goal-wrapper {
-    height: 90%;
-}
-
-#goal-form {
-    display: inline-block;
-    height: 100%;
-    width: 90%;
-    margin: 0 auto;
-    background-color: #baf8ff;
-    border-radius: 50px;
-}
-
-#minimize {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: 100%;
-    width: 40px;
-    float: right;
-}
-
-#minimize-button {
-    background-color: #689499;
-    height: 60px;
-    border-radius: 30px 0px 0px 30px;
-    line-height: 55px;
-    text-align: center;
-    color: white;
-    font-size: 32px;
-    cursor: pointer;
+.goal-title:hover {
+  background-color: #bbf4fa;
+  transition: .3s;
 }
