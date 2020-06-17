@@ -37,6 +37,12 @@ html {
   font-size: 30px;
   line-height: 60px;
   margin-right: 20px;
+  cursor: pointer;
+}
+
+#logo_name:hover, .nav_link:hover {
+    color: #a0d5db;
+    transition: .3s
 }
 
 #colors {
@@ -100,4 +106,41 @@ html {
   height: calc(100vh - 60px);
   padding-top:60px;
   display: flex;
+}
+
+.sidebar {
+  height: 100%;
+  min-width: 200px;
+  max-width: 200px;
+  border-right: 2px solid rgba(0,0,0,.11);
+  background-color: #aeecf2;
+  z-index: 2
+}
+
+#goals-tag {
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 24px;
+  font-weight: bold;
+  padding: 15px;
+  border-bottom: 2px solid rgba(0,0,0,.11);
+  color: #555555;
+}
+
+#newgoalbutton {
+  display: inline;
+  background-color: white;
+  width: 40px;
+  text-align: center;
+  border-radius: 25px;
+  float: right;
+  color: #777777;
+  cursor: pointer;
+  transition: .3s;
+  text-decoration: none;
+}
+
+#newgoalbutton:hover {
+  filter: brightness(94%);
+  transition: .3s;
 }
