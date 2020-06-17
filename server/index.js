@@ -20,7 +20,7 @@ function signupValid(info){
   return info.email.toString().trim() !== '' && info.pass.toString().trim !== '';
 }
 
-function checkUser(email, password, res){
+function checkUser(email, password, res, destination){
   db.get("SELECT id FROM users WHERE email='"+email.toString()+"' AND password='"+password.toString()+"';", (err, rows) => {
     if (err) {
       console.log(err.message);
@@ -28,7 +28,7 @@ function checkUser(email, password, res){
 
     if (rows != undefined){
       // GET GOALS INFO AND SEND IT BACK WITH THE FILE IN RES.JSON
-      res.sendFile(__dirname+'/pages/dash/dash.html')
+      res.sendFile(__dirname+'/pages/'+destination+'/'+destination+'.html')
     } else {
       res.sendFile(__dirname+'/pages/intro/intro.html')
     }
@@ -74,7 +74,7 @@ app.get('/', (req, res) => {
   // Return intro if cookies incorrect
   email = req.cookies.email || '';
   password = req.cookies.password || '';
-  checkUser(email, password, res);
+  checkUser(email, password, res, 'dash');
 });
 
 app.post('/signup', (req, res) => {
@@ -126,6 +126,12 @@ app.get('/info', (req, res) => {
   email = req.cookies.email || '';
   password = req.cookies.password || '';
   getUserInfo(email, password, res);
+})
+
+app.get('/new_goal', (req, res) => {
+  email = req.cookies.email || '';
+  password = req.cookies.password || '';
+  checkUser(email, password, res, 'new_goal');
 })
 
 // Listen

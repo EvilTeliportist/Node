@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>New Goal</title>
+    <title>Dedicate - Dashboard</title>
 
     <!-- css stuff -->
     <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
@@ -17,23 +17,38 @@
     <!-- NAV -->
     <div class = 'nav'>
       <div id = 'logo'></div>
-      <div id = 'logo_name'><a href='/'>Dedicate</a></div>
+      <div id = 'logo_name'><a href='/'>Dedicate</a>   |</div>
       <div class = 'nav_link'>About</div>
-      <div class = 'nav_link'>Other</div>
       <div id = 'colors'>&#8643;</div>
       <div id = 'nav_profile_button'></div>
     </div>
 
-    <div class = 'page-wrapper'>
-      <div id='button-wrapper'>
-        <div class='template-wrapper'>
-          <div class='header'>Use Template</div>
+    <div class='page-wrapper'>
+
+      <!-- SIDEBAR -->
+      <div class='sidebar'>
+        <div id='goals-tag'>
+          <p style='display:inline;'>Goals</p>
         </div>
-        <div class='template-wrapper' style='float:right;'>
-          <div class='header'>Create New</div>
+        <div class='goals-container'>
+          <!-- POPULATE THIS AREA WITH GOALS -->
         </div>
       </div>
+
+        <!-- DASH -->
+      <div class='dash-content'>
+        <div class='rel-wrapper' id='dash-rel-wrapper'>
+
+        </div>
+      </div>
+
+
     </div>
 
   </body>
+
+  <!-- scripts -->
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+  <script src = "/new_goal/new_goal.js"></script>
+
 </html>

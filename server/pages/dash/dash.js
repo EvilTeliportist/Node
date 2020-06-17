@@ -1,8 +1,9 @@
 
 // Load All Stats and Goals
-API_URL = 'http://localhost:5000/info'
+INFO_URL = 'http://localhost:5000/info'
+NEW_GOAL_URL = 'http://localhost:5000/new_goal'
 
-fetch(API_URL, {
+fetch(INFO_URL, {
   method: "GET",
   header: {
     'content-type':'application/json'
@@ -30,8 +31,4 @@ var color_rotate = 0;
 $("#colors").click(function() {
   color_rotate += 20;
   document.querySelector('html').style.filter = 'hue-rotate('+String(color_rotate)+'deg)'
-});
-
-$("#newgoalbutton").click(function() {
-  $(".goals-container").append("<div class='goal-title'>New Goal</div>");
 });
