@@ -24,13 +24,14 @@ html {
 #logo_name {
   font-size: 35px;
   line-height: 60px;
-  cursor: pointer;
   margin-right: 15px;
+  cursor: default;
 }
 
 #logo_name a {
   text-decoration: none;
   color: white;
+  cursor: pointer;
 }
 
 .nav_link {
@@ -40,9 +41,10 @@ html {
   cursor: pointer;
 }
 
-#logo_name:hover, .nav_link:hover {
-    color: #a0d5db;
-    transition: .3s
+
+.nav_link:hover, #logo_name a:hover {
+  color: #b1e0e6;
+  transition: .3s;
 }
 
 #colors {
@@ -143,4 +145,12 @@ html {
 #newgoalbutton:hover {
   filter: brightness(94%);
   transition: .3s;
+}
+
+.dash-content {
+  box-sizing: border-box;
+  height: 100%;
+  width: 100%;
+  padding: 25px;
+  background-color: #baf8ff;
 }

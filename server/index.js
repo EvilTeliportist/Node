@@ -129,10 +129,10 @@ app.get('/info', (req, res) => {
 })
 
 app.get('/new_goal', (req, res) => {
-    email = req.cookies.email || '';
-    password = req.cookies.password || '';
-    checkUser(email, password, res, 'new_goal');
-});
+  email = req.cookies.email || '';
+  password = req.cookies.password || '';
+  checkUser(email, password, res, 'new_goal');
+})
 
 // Listen
 app.listen(5000, () => {
