@@ -41,6 +41,10 @@ html {
   cursor: pointer;
 }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 8c5635edd540740633f1240398b4c59d31408224
 .nav_link:hover, #logo_name a:hover {
   color: #b1e0e6;
   transition: .3s;
@@ -152,4 +156,8 @@ html {
   width: 100%;
   padding: 25px;
   background-color: #baf8ff;
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 8c5635edd540740633f1240398b4c59d31408224
