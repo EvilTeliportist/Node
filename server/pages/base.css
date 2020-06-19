@@ -41,6 +41,7 @@ html {
   cursor: pointer;
 }
 
+
 .nav_link:hover, #logo_name a:hover {
   color: #b1e0e6;
   transition: .3s;
