@@ -1,11 +1,3 @@
-.dash-content {
-  box-sizing: border-box;
-  height: 100%;
-  width: 100%;
-  padding: 25px;
-  background-color: #baf8ff;
-}
-
 .dash-content-top, .dash-content-bottom {
   width: 100%;
   height: 48%;

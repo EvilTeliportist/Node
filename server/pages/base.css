@@ -145,3 +145,11 @@ html {
   filter: brightness(94%);
   transition: .3s;
 }
+
+.dash-content {
+  box-sizing: border-box;
+  height: 100%;
+  width: 100%;
+  padding: 25px;
+  background-color: #baf8ff;
+}
