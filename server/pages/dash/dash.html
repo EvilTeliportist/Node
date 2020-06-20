@@ -17,9 +17,8 @@
     <!-- NAV -->
     <div class = 'nav'>
       <div id = 'logo'></div>
-      <div id = 'logo_name'>Dedicate</div>
+      <div id = 'logo_name'><a href='/'>Dedicate</a>   |</div>
       <div class = 'nav_link'>About</div>
-      <div class = 'nav_link'>Other</div>
       <div id = 'colors'>&#8643;</div>
       <div id = 'nav_profile_button'></div>
     </div>
@@ -30,18 +29,20 @@
       <div class='sidebar'>
         <div id='goals-tag'>
           <p style='display:inline;'>Goals</p>
-          <p id='newgoalbutton'>+</p>
+          <a id='newgoalbutton' href='/new_goal'>+</a>
         </div>
-        <div class='goals-container'></div>
+        <div class='goals-container'>
+          <!-- POPULATE THIS AREA WITH GOALS -->
+        </div>
       </div>
 
         <!-- DASH -->
       <div class='dash-content'>
         <div class='rel-wrapper' id='dash-rel-wrapper'>
           <div class='dash-content-top'>
-            <div class='top-cont'><h1 class='impact-text'>419</h1>Total landmarks completed.</div>
-            <div class='top-cont'><h1 class='impact-text'>7</h1>Ongoing goals.</div>
-            <div class='top-cont'><h1 class='impact-text'>134</h1>Total hours working on goals.</div>
+            <div class='top-cont'><h1 class='impact-text' id='totalLandmarks'>...</h1>Total landmarks completed.</div>
+            <div class='top-cont'><h1 class='impact-text' id='ongoinggoals'>...</h1>Ongoing goals.</div>
+            <div class='top-cont'><h1 class='impact-text' id='hours'>...</h1>Total hours working on goals.</div>
           </div>
           <div class='dash-content-bottom'>
             <div class='bottom-cont'>TODO: Graph of total milestones over time.</div>

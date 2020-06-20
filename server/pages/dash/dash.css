@@ -1,65 +1,24 @@
-.sidebar {
-  height: 100%;
-  min-width: 200px;
-  border-right: 2px solid rgba(0,0,0,.11);
-  background-color: #aeecf2;
-  z-index: 2
-}
-
-#goals-tag {
-  width: 100%;
-  box-sizing: border-box;
-  font-size: 24px;
-  font-weight: bold;
-  padding: 15px;
-  border-bottom: 2px solid rgba(0,0,0,.11);
-  color: #555555;
-}
-
-#newgoalbutton {
-  display: inline;
-  background-color: white;
-  width: 40px;
-  text-align: center;
-  border-radius: 25px;
-  float: right;
-  color: #777777;
-  cursor: pointer;
-  transition: .3s;
-  text-decoration: none;
-}
-
-#newgoalbutton:hover {
-  filter: brightness(94%);
-  transition: .3s;
-}
-
-.dash-content {
-  box-sizing: border-box;
-  height: 100%;
-  width: 100%;
-  padding: 25px;
-  background-color: #baf8ff;
-}
 
 .dash-content-top, .dash-content-bottom {
   width: 100%;
-  height: 47%;
+  height: 48%;
   display:flex;
   justify-content: space-between;
 }
 
 .dash-content-bottom {
   position: absolute;
-  bottom: 10px;
+  bottom: 0px;
 }
 
 .top-cont, .bottom-cont {
   box-sizing: border-box;
   font-size: 18px;
   display: flex;
+  box-sizing: border-box;
   position: relative;
   height: 100%;
+  padding: 10px;
   background-color: #b8f2e6;
   border: 3px solid #aed9e0;
   padding: 10px;
@@ -99,7 +58,7 @@
 }
 
 .impact-text {
-  width: 150px;
+  width: 200px;
   margin: 0 auto;
   font-size: 72px;
   border-bottom: 2px solid #aed9e0;
