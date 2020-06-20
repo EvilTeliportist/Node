@@ -44,7 +44,7 @@
 
 .dash-content-top, .dash-content-bottom {
   width: 100%;
-  height: 45%;
+  height: 47%;
   display:flex;
   justify-content: space-between;
 }
@@ -55,12 +55,14 @@
 }
 
 .top-cont, .bottom-cont {
+  box-sizing: border-box;
   font-size: 18px;
   display: flex;
   position: relative;
   height: 100%;
   background-color: #b8f2e6;
   border: 3px solid #aed9e0;
+  padding: 10px;
   border-radius: 10px;
   transition: .3s;
   text-align: center;
@@ -69,7 +71,7 @@
 }
 
 .top-cont {
-  width: 30%;
+  width: 32%;
   top:0px;
   left:0px;
   font-size: 24px;
@@ -102,53 +104,4 @@
   font-size: 72px;
   border-bottom: 2px solid #aed9e0;
   margin-top:-10px;
-}
-
-#new-goal {
-    display: flex;
-    box-sizing: border-box;
-    position: absolute;
-    height:calc(100% - 60px);
-    width:calc(100% - 202px);
-    top:60px;
-    left:-80%;
-    background-color: #aeecf2;
-    transition: 1s;
-    border-right: 5px solid grey;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-}
-
-#new-goal-wrapper {
-    height: 90%;
-}
-
-#goal-form {
-    display: inline-block;
-    height: 100%;
-    width: 90%;
-    margin: 0 auto;
-    background-color: #baf8ff;
-    border-radius: 50px;
-}
-
-#minimize {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: 100%;
-    width: 40px;
-    float: right;
-}
-
-#minimize-button {
-    background-color: #689499;
-    height: 60px;
-    border-radius: 30px 0px 0px 30px;
-    line-height: 55px;
-    text-align: center;
-    color: white;
-    font-size: 32px;
-    cursor: pointer;
 }
