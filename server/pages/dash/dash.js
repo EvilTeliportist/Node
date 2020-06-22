@@ -24,11 +24,11 @@ fetch(INFO_URL, {
 
 
 
-// Runtime functions
+// Runtime functions ----------------
 
 var color_rotate = 0;
-
 $("#colors").click(function() {
   color_rotate += 20;
   document.querySelector('html').style.filter = 'hue-rotate('+String(color_rotate)+'deg)'
 });
+  

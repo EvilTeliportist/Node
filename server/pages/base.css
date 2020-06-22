@@ -115,7 +115,22 @@ html {
   max-width: 200px;
   border-right: 2px solid rgba(0,0,0,.11);
   background-color: #aeecf2;
-  z-index: 2
+}
+
+.goals-container p {
+  font-size: 24px;
+  padding: 10px;
+  color: #555555;
+  border-bottom: 2px solid rgba(0,0,0,.04);
+  margin-bottom: 0px;
+  outline: none;
+  cursor: pointer;
+}
+
+.goals-container p:hover {
+  background-color: #baf2f7;
+  border-bottom: 2px solid rgba(0,0,0,.07);
+  transition: .3s;
 }
 
 #goals-tag {
